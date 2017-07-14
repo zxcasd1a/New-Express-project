@@ -2,7 +2,7 @@ var express = require("express");
 var hbs = require("hbs");
 var fs = require("fs");
 
-
+var port = process.env.PORT || 3000; // build port for heroku
 var app = express();
 
 app.set('view engine', 'hbs');
@@ -48,6 +48,6 @@ app.get("/about", (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-console.log("Serever has nude girl...")           
+app.listen(port, () => {
+console.log("Serever has nude girl " + port)           
  });
